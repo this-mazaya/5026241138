@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MenuController;
 
 Route::get('/', function () {
@@ -41,3 +42,6 @@ Route::get('indx', [MenuController::class, 'index']);
 Route::get('linktree', [MenuController::class, 'linktree']);
 Route::get('pert6', [MenuController::class, 'pert6']);
 Route::get('pert5', [MenuController::class, 'pert5']);
+
+//route CRUD
+Route::get('/pegawai',[PegawaiDBController::class, 'index2']);
