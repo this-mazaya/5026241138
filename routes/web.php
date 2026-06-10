@@ -8,6 +8,7 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\HewanController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\NilaiKuliahController;
 
 
 Route::get('/', function () {
@@ -54,8 +55,8 @@ Route::get('/pegawai/edit/{id}',[PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update',[PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}',[PegawaiDBController::class, 'hapus']);
 Route::get('/pegawai/cari',[PegawaiDBController::class, 'cari']);
-Route::get('/hewan', [HewanController::class, 'index']);
 
+Route::get('/hewan', [HewanController::class, 'index']);
 Route::get('/hewan/tambah', [HewanController::class, 'tambah']);
 Route::post('/hewan/store', [HewanController::class, 'store']);
 Route::get('/hewan/edit/{id}', [HewanController::class, 'edit']);
@@ -70,3 +71,7 @@ Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index']);
+Route::get('/nilaikuliah/tambah', [NilaiKuliahController::class, 'tambah']);
+Route::post('/nilaikuliah/store', [NilaiKuliahController::class, 'store']);
