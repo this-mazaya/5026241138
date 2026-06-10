@@ -6,6 +6,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\HewanController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,3 +52,16 @@ Route::get('/pegawai/edit/{id}',[PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update',[PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}',[PegawaiDBController::class, 'hapus']);
 Route::get('/pegawai/cari',[PegawaiDBController::class, 'cari']);
+Route::get('/hewan', [HewanController::class, 'index']);
+
+Route::get('/hewan/tambah', [HewanController::class, 'tambah']);
+
+Route::post('/hewan/store', [HewanController::class, 'store']);
+
+Route::get('/hewan/edit/{id}', [HewanController::class, 'edit']);
+
+Route::post('/hewan/update', [HewanController::class, 'update']);
+
+Route::get('/hewan/hapus/{id}', [HewanController::class, 'hapus']);
+
+Route::get('/hewan/cari', [HewanController::class, 'cari']);
