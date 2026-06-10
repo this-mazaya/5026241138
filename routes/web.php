@@ -7,6 +7,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\HewanController;
+use App\Http\Controllers\SiswaController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -55,13 +57,16 @@ Route::get('/pegawai/cari',[PegawaiDBController::class, 'cari']);
 Route::get('/hewan', [HewanController::class, 'index']);
 
 Route::get('/hewan/tambah', [HewanController::class, 'tambah']);
-
 Route::post('/hewan/store', [HewanController::class, 'store']);
-
 Route::get('/hewan/edit/{id}', [HewanController::class, 'edit']);
-
 Route::post('/hewan/update', [HewanController::class, 'update']);
-
 Route::get('/hewan/hapus/{id}', [HewanController::class, 'hapus']);
-
 Route::get('/hewan/cari', [HewanController::class, 'cari']);
+
+//route CRUD siswa
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
