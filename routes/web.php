@@ -9,6 +9,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\HewanController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\NilaiKuliahController;
+use App\Http\Controllers\BelanjaController;
 
 
 Route::get('/', function () {
@@ -75,3 +76,8 @@ Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.
 Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index']);
 Route::get('/nilaikuliah/tambah', [NilaiKuliahController::class, 'tambah']);
 Route::post('/nilaikuliah/store', [NilaiKuliahController::class, 'store']);
+
+Route::get('/belanja',[BelanjaController::class,'index']);
+Route::get('/belanja/tambah',[BelanjaController::class,'tambah']);
+Route::post('/belanja/store',[BelanjaController::class,'store']);
+Route::get('/belanja/hapus/{id}',[BelanjaController::class,'hapus']);
